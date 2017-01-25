@@ -1,7 +1,7 @@
 <?php
-
 /*
  * Copyright 2016 Johannes M. Schmitt <schmittjoh@gmail.com>
+ * Copyright 2017 Viacheslav Sychov <viacheslav.sychov@gmail.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,23 +16,9 @@
  * limitations under the License.
  */
 
-namespace JMS\Serializer\Annotation;
 
-/**
- * @Annotation
- * @Target("CLASS")
- */
-class Discriminator
+namespace JMS\Serializer\Tests\Fixtures\Discriminator;
+
+class Other extends Vehicle implements VehicleInterface
 {
-    /** @var array<string> */
-    public $map;
-
-    /** @var string */
-    public $field = 'type';
-
-    /** @var boolean */
-    public $disabled = false;
-
-    /** @var string */
-    public $default;
 }

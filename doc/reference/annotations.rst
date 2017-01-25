@@ -239,11 +239,16 @@ where a common base class exists. The ``@Discriminator`` annotation has to be ap
 to the least super type::
 
     /**
-     * @Discriminator(field = "type", map = {"car": "Car", "moped": "Moped"})
+     * @Discriminator(field = "type", disabled = false, map = {"car": "Car", "moped": "Moped"}, default="Other")
      */
     abstract class Vehicle { }
     class Car extends Vehicle { }
     class Moped extends Vehicle { }
+    class Other extends Vehicle { }
+
+.. note ::
+
+    `default` is optional.
 
 @Type
 ~~~~~
@@ -475,7 +480,7 @@ Resulting XML:
         </comment>
     </post>
 
-You can also specify the entry tag namespace using the ``namespace`` attribute (``@XmlList(inline = true, entry = "comment", namespace="http://www.example.com/ns")``). 
+You can also specify the entry tag namespace using the ``namespace`` attribute (``@XmlList(inline = true, entry = "comment", namespace="http://www.example.com/ns")``).
 
 @XmlMap
 ~~~~~~~

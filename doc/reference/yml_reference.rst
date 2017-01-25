@@ -14,6 +14,8 @@ YAML Reference
         custom_accessor_order: [propertyName1, propertyName2, ..., propertyNameN]
         discriminator:
             field_name: type
+            disabled: false
+            default: DefaultClassName
             map:
                 some-value: ClassName
         virtual_properties:
